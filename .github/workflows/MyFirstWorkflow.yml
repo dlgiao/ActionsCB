@@ -12,8 +12,9 @@ jobs:
     steps:
       - name: Greet the user
         run: |
-            echo "Hello world from ${{github.actor}}."
+            echo "Hello ${{vars.WHO_TO_GREET}} from ${{github.actor}}."
             echo "Current branch is '${{github.ref}}'."
+            echo "My secret is $${{secrets.GIAO_ACTIONS_SECRET}}."
         shell: bash
       - name: Checkout
         uses: actions/checkout@4.2.2
